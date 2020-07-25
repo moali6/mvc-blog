@@ -14,19 +14,19 @@
         }
 
         function configure() {
-            require(ROOT . "/private/core/config/database.php");
+            // require(ROOT . "/private/core/config/database.php");
 
-            if (isset($this->config["databse"])) {
-                try {
-                    $this->db = new PDO($this->config["database"]["driver"] .
-                        ":host=" . $this->config["database"]["dbhost"] .
-                        ";dbname=" . $this->config["database"]["dbname"]
-                        , $this->config["database"]["username"]
-                        , $this->config["database"]["passord"]);
-                } catch(PDOException $ex) {
-                    echo($ex->getMessage);
-                }
-            }
+            // if (isset($this->config["databse"])) {
+            //     try {
+            //         $this->db = new PDO($this->config["database"]["driver"] .
+            //             ":host=" . $this->config["database"]["dbhost"] .
+            //             ";dbname=" . $this->config["database"]["dbname"]
+            //             , $this->config["database"]["username"]
+            //             , $this->config["database"]["passord"]);
+            //     } catch(PDOException $ex) {
+            //         echo($ex->getMessage);
+            //     }
+            // }
         }
 
         function load () {

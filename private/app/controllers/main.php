@@ -10,10 +10,20 @@ class Main extends Controller {
      */
     function Index () {
 
-        $this->view("template/header");
+        $data = Array("title" => "Main Page");
+        $this->view("template/header", $data);
         $this->view("main/index");
         $this->view("template/footer");
         
+    }
+
+    function List () {
+
+        $data = Array("title" => "List Page");
+        $this->view("template/header", $data);
+        $this->view("list/index");
+        $this->view("template/footer");
+
     }
 
 }
