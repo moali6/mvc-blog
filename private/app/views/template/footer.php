@@ -1,4 +1,4 @@
-        <script src="/public/js/app.js"></script>
+        <script src="/mvc-blog/public/js/app.js"></script>
     </body>
 	<footer>
   		<p>

@@ -80,7 +80,7 @@ abstract class Controller {
 
         extract($data);
 
-        require(ROOT . "/private/app/views/$path.php");
+        require(ROOT . "/mvc-blog/private/app/views/$path.php");
 
     }
 }
