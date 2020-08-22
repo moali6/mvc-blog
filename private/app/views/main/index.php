@@ -30,8 +30,15 @@
 
   	$sql = mysqli_query($connection, $query);
 
+  	$counter = 0;
+
 	while($row = mysqli_fetch_array($sql)) {
-		echo "<tr><td>" . $row[0] . "</td><td><button onclick=\"readBlog(".$row[0].")\">" . $row[1] . "</button></td><td>" . $row[3] . "</td></tr>";
+
+		// <<<<<WORKING
+
+		echo "<tr><td>" . $row[0] . "</td><td><button onclick=\"readBlog(".$counter.")\">" . $row[1] . "</button><button onclick=\"updateBlog(".$row[0].",'".$row[1]."')\">UPDATE</button></td><td>" . $row[3] . "</td></tr>";
+
+		$counter = $counter + 1;
 	}
 
 	CloseConnection($connection);
@@ -45,6 +52,8 @@
 </div>
 
 <div id="read_div" style="display:none">
+	<h2> Readding Now... </h2>
+
 	<p id="blog_para"></p>
 </div>
 
@@ -58,6 +67,21 @@
 		</textarea>
 		<p></p>
 		<input type="submit" value="Submit">
+	</form> 
+
+</div>
+
+
+<div hidden="true" id="update_div">
+
+	<form name="new_blog" action="/mvc-blog/create.php" method="post">
+		<p>Title:</p>
+		<input type="text" name="blog_title" id="update_title">
+		<p>Blog:</p>
+		<textarea id="blog_content" name="name_blog_content" rows="10" cols="50">
+		</textarea>
+		<p></p>
+		<input type="submit" value="Update">
 	</form> 
 
 </div>

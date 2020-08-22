@@ -2,6 +2,7 @@
 <script type="text/javascript">
     var create_blog = false;
     var read_blog = false;
+    var update_blog = false;
 
     function createBlog() {
         if (create_blog == true) {
@@ -40,12 +41,28 @@
             var read_div = document.getElementById("read_div");
             read_div.style.display = "block";
             var para = document.getElementById("blog_para");
+            console.log(result);
+            console.log(result[1]);
             para.innerHTML = result[blog_id-1];    
             read_blog = true;
         } else {
             var read_div = document.getElementById("read_div");
             read_div.style.display = "none";
             read_blog = false;
+        }
+    }
+
+    function updateBlog(blog_id, title, blog) {
+        if (update_blog == false) {
+            var update_div = document.getElementById("update_div");
+            update_div.style.display = "block";
+            var update_title = document.getElementById("update_title");
+            update_title.value = title;
+            update_blog = true;
+        } else {
+            var update_div = document.getElementById("update_div");
+            update_div.style.display = "none";
+            update_blog = false;
         }
     }
 </script>
@@ -58,10 +75,10 @@
         <link rel="stylesheet" href="/mvc-blog/public/css/app.css">
     </head>
     <body>
-    	<table style="width:100%">
-  			<tr>
-    			<th><a href="/mvc-blog/main/index.php">Home</a></th>
-    			<th><a href="/mvc-blog/list/index.php">List All</a></th>
-    			<th><a href="#">About</a></th>
- 			</tr>
-		</table>
+        <table style="width:100%">
+            <tr>
+                <th><a href="/mvc-blog/main/index.php">Home</a></th>
+                <th><a href="/mvc-blog/list/index.php">List All</a></th>
+                <th><a href="#">About</a></th>
+            </tr>
+        </table>
