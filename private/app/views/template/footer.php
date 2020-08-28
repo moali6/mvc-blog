@@ -1,3 +1,3 @@
-        <script src="/public/js/app.js"></script>
+        <script src="/mvc-blog/js/app.js"></script>
     </body>
 </html>
